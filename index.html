@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Crypto Sentiment Analyzer - PRO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>AI Crypto Sentiment Analyzer</h1>
+    <p>Live Price • Chart • TA • FA • News • Twitter • Fear&Greed</p>
+</header>
+
+<div class="container">
+
+    <div class="selector">
+        <select id="coinSelect">
+            <option value="bitcoin">Bitcoin (BTC)</option>
+            <option value="ethereum">Ethereum (ETH)</option>
+            <option value="solana">Solana (SOL)</option>
+        </select>
+        <button onclick="analyze()">Analyze</button>
+    </div>
+
+    <div class="live-box">
+        <h2>💰 Live Price</h2>
+        <p id="price">Loading...</p>
+    </div>
+
+    <div class="chart-box">
+        <h2>📈 Live Chart</h2>
+        <iframe id="tvChart" frameborder="0"></iframe>
+    </div>
+
+    <div class="grid">
+        
+        <div class="card">
+            <h3>📉 Technical Analysis</h3>
+            <p id="taScore">--</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Fundamental Score</h3>
+            <p id="faScore">--</p>
+        </div>
+
+        <div class="card">
+            <h3>📰 News Sentiment</h3>
+            <p id="newsScore">--</p>
+        </div>
+
+        <div class="card">
+            <h3>🐦 Twitter Sentiment</h3>
+            <p id="twitterScore">--</p>
+        </div>
+
+        <div class="card">
+            <h3>😨 Fear & Greed Index</h3>
+            <p id="fgScore">--</p>
+        </div>
+
+    </div>
+
+    <div class="final-meter">
+        <h2>🔥 FINAL AI SENTIMENT</h2>
+        <div id="finalMeter">Neutral</div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crypto Tracker</title>
+  <style>
+    body {
+      background: #0a0f1f;
+      color: white;
+      font-family: Arial;
+    }
+
+    .coin-wrapper {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .coin-box {
+      width: 150px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 15px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,255,200,0.4);
+    }
+
+    .coin {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="coin-wrapper">
+
+    <div class="coin-box">
+        <img src="assets/btc.png" class="coin">
+        <h3>Bitcoin (BTC)</h3>
+        <p id="btc-price">$0</p>
+    </div>
+
+    <div class="coin-box">
+        <img src="assets/eth.png" class="coin">
+        <h3>Ethereum (ETH)</h3>
+        <p id="eth-price">$0</p>
+    </div>
+
+    <div class="coin-box">
+        <img src="assets/sol.png" class="coin">
+        <h3>Solana (SOL)</h3>
+        <p id="sol-price">$0</p>
+    </div>
+
+</div>
+
+<script>
+async function loadPrices() {
+    const url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd";
+
+    const res = await fetch(url);
+    const data = await res.json();
+
+    document.getElementById("btc-price").innerText = "$" + data.bitcoin.usd;
+    document.getElementById("eth-price").innerText = "$" + data.ethereum.usd;
+    document.getElementById("sol-price").innerText = "$" + data.solana.usd;
+}
+
+loadPrices();
+setInterval(loadPrices, 10000);
+</script>
+
+</body>
+</html>
