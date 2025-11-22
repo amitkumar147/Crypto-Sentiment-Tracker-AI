@@ -19,15 +19,10 @@ https://your-username.github.io/crypto-tracker/
 ---
 
 ## 🖼️ Screenshots  
-Add your screenshots here after uploading PNGs inside the project:
+<img src="btc.png" width="80">
+<img src="eth.png" width="80">
+<img src="sol.png" width="80">
 
-btc.png
-eth.png
-sol.png
-
-Example (replace with your images):
-
-![Crypto Dashboard](assets/screenshot-1.png)
 
 ---
 
@@ -77,7 +72,7 @@ crypto-tracker │── index.html │── style.css (optional) │── ass
 
 1. Clone the repo:
 
-git clone https://github.com/your-amitkumar147/crypto-tracker.ai
+git clone https://github.com/your-amitkumar147/crypto-sentiment-tracker-ai
 
 2. Open file:
 
