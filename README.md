@@ -21,7 +21,7 @@ https://your-username.github.io/crypto-tracker/
 ## 🖼️ Screenshots  
 Add your screenshots here after uploading PNGs inside the project:
 
-assets/screenshot-1.png
+assets/btc.png
 assets/screenshot-2.png
 
 Example (replace with your images):
